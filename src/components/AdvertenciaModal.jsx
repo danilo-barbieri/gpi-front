@@ -9,7 +9,7 @@ export default function AdvertenciaModal({ agente, onClose }) {
    const enviarAdvertencia = async () => {
     if (!motivo || !responsavel) return alert("Preencha todos os campos.")
     try {
-      await fetch(`http://localhost:5000/agentes/${agente._id}/advertencia`, {
+      await fetch(`https://gpi-backend.onrender.com/agentes/${agente._id}/advertencia`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

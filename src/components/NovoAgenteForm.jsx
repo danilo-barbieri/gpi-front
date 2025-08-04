@@ -18,7 +18,7 @@ export default function NovoAgenteForm({ onCadastrado }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const res = await fetch("http://localhost:5000/agentes", {
+    const res = await fetch("https://gpi-backend.onrender.com/agentes", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form)

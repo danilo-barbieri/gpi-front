@@ -27,7 +27,7 @@ export default function Hierarquia() {
 
 
   useEffect(() => {
-    fetch("http://localhost:5000/agentes")
+    fetch("https://gpi-backend.onrender.com/agentes")
       .then((res) => res.json())
       .then((data) => {
         const ordenados = data.sort(
@@ -46,7 +46,7 @@ export default function Hierarquia() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    await fetch("http://localhost:5000/agentes", {
+    await fetch("https://gpi-backend.onrender.com/agentes", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(novoAgente),
@@ -64,7 +64,7 @@ export default function Hierarquia() {
       status: "ativo",
     })
 
-    const res = await fetch("http://localhost:5000/agentes")
+    const res = await fetch("https://gpi-backend.onrender.com/agentes")
     const data = await res.json()
     const ordenados = data.sort(
       (a, b) =>
@@ -194,7 +194,7 @@ export default function Hierarquia() {
           <form
             onSubmit={async (e) => {
               e.preventDefault()
-              await fetch(`http://localhost:5000/agentes/${agenteSelecionado._id}`, {
+              await fetch(`https://gpi-backend.onrender.com/agentes/${agenteSelecionado._id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(agenteSelecionado),
@@ -202,7 +202,7 @@ export default function Hierarquia() {
               setModalEditarAberto(false)
 
               // Atualiza lista
-              const res = await fetch("http://localhost:5000/agentes")
+              const res = await fetch("https://gpi-backend.onrender.com/agentes")
               const data = await res.json()
               const ordenados = data.sort(
                 (a, b) => cargosOrdenados.indexOf(a.cargo) - cargosOrdenados.indexOf(b.cargo)

@@ -16,7 +16,7 @@ export default function HierarquiaRow({ agente, onClick }) {
 
   const promover = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/agentes/${id}/promover`, { method: "POST" });
+      const res = await fetch(`https://gpi-backend.onrender.com/agentes/${id}/promover`, { method: "POST" });
       const data = await res.json();
       if (res.ok) {
         alert(`Promovido para ${data.novoCargo}`);
@@ -31,7 +31,7 @@ export default function HierarquiaRow({ agente, onClick }) {
 
   const rebaixar = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/agentes/${id}/rebaixar`, { method: "POST" });
+      const res = await fetch(`https://gpi-backend.onrender.com/agentes/${id}/rebaixar`, { method: "POST" });
       const data = await res.json();
       if (res.ok) {
         alert(`Rebaixado para ${data.novoCargo}`);
@@ -45,7 +45,7 @@ export default function HierarquiaRow({ agente, onClick }) {
   };
 
   const confirmarExoneracao = async ({ motivo, responsavel }) => {
-    await fetch(`http://localhost:5000/agentes/${agente._id}/exonerar`, {
+    await fetch(`https://gpi-backend.onrender.com/agentes/${agente._id}/exonerar`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ motivo, responsavel })

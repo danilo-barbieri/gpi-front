@@ -5,7 +5,7 @@ export default function Exonerados() {
   const [exonerados, setExonerados] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:5000/agentes/exonerados")
+    fetch("https://gpi-backend.onrender.com/agentes/exonerados")
       .then((res) => res.json())
       .then(setExonerados)
   }, [])
